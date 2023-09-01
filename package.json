@@ -1,5 +1,6 @@
 {
   "name": "flama-flix",
+  "author": "Flamarion Fagundes Pinto",
   "version": "0.1.0",
   "private": true,
   "scripts": {
