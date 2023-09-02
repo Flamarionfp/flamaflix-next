@@ -3,7 +3,7 @@ import { OMDbSearchResponse } from "@/types/omdb";
 import { mapOMDbSearchResponse } from "@/utils/mappers/search";
 import Image from "next/image";
 import Link from "next/link";
-import { Avatar, SearchInput } from "@/components";
+import { Avatar, BannerCarrousel, SearchInput } from "@/components";
 import { truncate } from "@/utils/string";
 // import { getQueryParams } from "@/utils/url";
 
@@ -29,23 +29,22 @@ const headerLinks = [
 export default async function Home() {
   // const params = {
   //   apikey: process.env.MEDIA_API_KEY,
-  //   s: "spiderman",
+  //   s: "star wars",
   // };
 
   // const response = await fetch(
   //   `${process.env.MEDIA_API_HOST}/?${getQueryParams(params)})}`
   // );
 
-  //  const data: OMDbSearchResponse = await response.json();
+  // const data: OMDbSearchResponse = await response.json();
 
   const spiderManoOmdbData: OMDbSearchResponse = require("../fixtures/spiderman-search-response.json");
   const starWarsmanoOmdbData: OMDbSearchResponse = require("../fixtures/starwars-search-response.json");
 
-  const { data: spiderManSearchData } =
-    mapOMDbSearchResponse(spiderManoOmdbData);
+  const { data } = mapOMDbSearchResponse(starWarsmanoOmdbData);
 
-  const { data: starWarsSearchData } =
-    mapOMDbSearchResponse(starWarsmanoOmdbData);
+  // const { data: formmatedData } = mapOMDbSearchResponse(data);
+  // const filteredData = formmatedData.filter((item) => item.poster !== "N/A");
 
   return (
     <Fragment>
@@ -85,18 +84,12 @@ export default async function Home() {
 
       <main>
         <section>
-          <Image
-            className="w-full min-h-[300px]"
-            width={1236}
-            height={300}
-            alt="Banner"
-            src="/banner1.jpg"
-          />
+          <BannerCarrousel />
         </section>
 
         <section className="flex justify-center mt-10">
           <div className="grid grid-cols-3 gap-4 max-w-[1236px] ">
-            {spiderManSearchData.map((item) => (
+            {data.map((item) => (
               <div key={item.imdbID}>
                 <Image
                   className="rounded-md"
