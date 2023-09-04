@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { SwiperSlide } from "swiper/react";
 import { ContentProps } from "./title-showcase.types";
 import { ShowcaseWrapper } from "../showcase-wrapper";
 
@@ -13,9 +12,13 @@ export const Content = async (props: ContentProps) => {
   return (
     <ShowcaseWrapper {...rest}>
       {titles.map((item) => (
-        <SwiperSlide key={item.imdbID}>
-          <Image alt={item.title} src={item.poster} height={100} width={100} />
-        </SwiperSlide>
+        <Image
+          key={item.imdbID}
+          alt={item.title}
+          src={item.poster}
+          height={100}
+          width={100}
+        />
       ))}
     </ShowcaseWrapper>
   );

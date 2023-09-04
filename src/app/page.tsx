@@ -1,7 +1,12 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Avatar, BannerCarrousel, SearchInput } from "@/components";
+import {
+  Avatar,
+  BannerCarrousel,
+  CategoryShowcase,
+  SearchInput,
+} from "@/components";
 import { TitleShowcase } from "@/components/title-showcase";
 
 const headerLinks = [
@@ -73,6 +78,21 @@ export default async function Home() {
           <TitleShowcase
             sectionTitle="Piratas do Caribe"
             titleQuery="pirates of the caribbean"
+          />
+        </div>
+
+        <div className="py-10">
+          <CategoryShowcase
+            folder="marvel"
+            sectionTitle="Filmes de Super Herói"
+          />
+        </div>
+
+        <div className="py-10">
+          <CategoryShowcase
+            folder="dc"
+            sectionTitle="Nossos destaques"
+            slidesPerView={8.5}
           />
         </div>
       </main>

@@ -30,10 +30,15 @@ export const ShowcaseWrapper = (props: ShowcaseWrapperProps) => {
           slidesPerView={slidesPerView}
           spaceBetween={spaceBetween}
           navigation={true}
-          className="mySwiper"
+          style={{
+            width: "100%",
+            height: "fit-content",
+          }}
         >
           {Children.map(slides, (slide) => (
-            <SwiperSlide>{slide}</SwiperSlide>
+            <SwiperSlide style={{ borderRadius: "100% !important" }}>
+              {slide}
+            </SwiperSlide>
           ))}
         </Swiper>
       </div>
