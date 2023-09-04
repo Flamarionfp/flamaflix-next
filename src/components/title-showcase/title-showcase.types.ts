@@ -1,14 +1,9 @@
-import { SearchData } from "@/types/main";
+import { SearchData, ShowcaseProps } from "@/types/main";
 
-interface CommonProps {
-  sectionTitle?: string;
-  slidesPerView?: number;
-}
-
-export interface TitleShowcaseProps extends CommonProps {
+export interface TitleShowcaseProps extends ShowcaseProps {
   titleQuery: string;
 }
 
-export interface ContentProps extends CommonProps {
-  data: SearchData[];
+export interface ContentProps extends ShowcaseProps {
+  titles: SearchData[];
 }

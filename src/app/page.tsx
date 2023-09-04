@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Avatar, BannerCarrousel, SearchInput } from "@/components";
 import { TitleShowcase } from "@/components/title-showcase";
-import { searchTitles } from "@/services/search";
 
 const headerLinks = [
   {
@@ -25,8 +24,6 @@ const headerLinks = [
 ];
 
 export default async function Home() {
-  const { data } = await searchTitles("star wars");
-
   return (
     <Fragment>
       <header className="p-8 flex justify-around items-center">
@@ -68,11 +65,11 @@ export default async function Home() {
           <BannerCarrousel />
         </section>
 
-        <div className="py-6">
+        <div className="py-10">
           <TitleShowcase sectionTitle="Saga Batman" titleQuery="batman" />
         </div>
 
-        <div className="py-6">
+        <div className="py-10">
           <TitleShowcase
             sectionTitle="Piratas do Caribe"
             titleQuery="pirates of the caribbean"

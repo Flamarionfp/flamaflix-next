@@ -13,6 +13,14 @@ export const searchTitles = async (titleQuery: string) => {
   );
 
   const data: OMDbSearchResponse = await response.json();
+
+  if (data?.Response !== "True") {
+    return {
+      data: [],
+      totalResults: 0,
+    };
+  }
+
   const { data: formattedData = [], totalResults } =
     mapOMDbSearchResponse(data);
 

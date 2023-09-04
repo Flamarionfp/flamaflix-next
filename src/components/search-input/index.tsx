@@ -11,7 +11,7 @@ export const SearchInput = () => {
         />
         <button type="submit">
           <Image
-            className="absolute top-2 right-6"
+            className="absolute top-2.5 right-6"
             src="/icons/search-icon.svg"
             alt="ícone de busca"
             width={20}

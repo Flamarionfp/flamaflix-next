@@ -10,3 +10,9 @@ export interface Search {
   totalResults: number;
   data: SearchData[];
 }
+
+export interface ShowcaseProps {
+  sectionTitle?: string;
+  slidesPerView?: number;
+  spaceBetween?: number;
+}
