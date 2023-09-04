@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Keyboard } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -9,7 +10,7 @@ import "swiper/css/navigation";
 export const BannerCarrousel = () => {
   const banners = new Array(3)
     .fill(null)
-    .map((_, index) => `/banner${index + 1}.jpg`);
+    .map((_, index) => `/banners/main/banner${index + 1}.jpg`);
 
   return (
     <Swiper

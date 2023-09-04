@@ -1,11 +1,9 @@
 import { Fragment } from "react";
-import { OMDbSearchResponse } from "@/types/omdb";
-import { mapOMDbSearchResponse } from "@/utils/mappers/search";
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar, BannerCarrousel, SearchInput } from "@/components";
-import { truncate } from "@/utils/string";
-// import { getQueryParams } from "@/utils/url";
+import { TitleShowcase } from "@/components/title-showcase";
+import { searchTitles } from "@/services/search";
 
 const headerLinks = [
   {
@@ -27,24 +25,7 @@ const headerLinks = [
 ];
 
 export default async function Home() {
-  // const params = {
-  //   apikey: process.env.MEDIA_API_KEY,
-  //   s: "star wars",
-  // };
-
-  // const response = await fetch(
-  //   `${process.env.MEDIA_API_HOST}/?${getQueryParams(params)})}`
-  // );
-
-  // const data: OMDbSearchResponse = await response.json();
-
-  const spiderManoOmdbData: OMDbSearchResponse = require("../fixtures/spiderman-search-response.json");
-  const starWarsmanoOmdbData: OMDbSearchResponse = require("../fixtures/starwars-search-response.json");
-
-  const { data } = mapOMDbSearchResponse(starWarsmanoOmdbData);
-
-  // const { data: formmatedData } = mapOMDbSearchResponse(data);
-  // const filteredData = formmatedData.filter((item) => item.poster !== "N/A");
+  const { data } = await searchTitles("star wars");
 
   return (
     <Fragment>
@@ -52,7 +33,7 @@ export default async function Home() {
         <div className="flex items-center gap-2">
           <Link href="/">
             <Image
-              src="/logo.png"
+              src="/images/logo.png"
               alt="Logo"
               width={50}
               height={50}
@@ -87,25 +68,16 @@ export default async function Home() {
           <BannerCarrousel />
         </section>
 
-        <section className="flex justify-center mt-10">
-          <div className="grid grid-cols-3 gap-4 max-w-[1236px] ">
-            {data.map((item) => (
-              <div key={item.imdbID}>
-                <Image
-                  className="rounded-md"
-                  src={item.poster}
-                  alt={item.title}
-                  quality={100}
-                  width={300}
-                  height={300}
-                />
-                <p className="text-center mt-2 font-light">
-                  {truncate(item.title, 20)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <div className="py-6">
+          <TitleShowcase sectionTitle="Saga Batman" titleQuery="batman" />
+        </div>
+
+        <div className="py-6">
+          <TitleShowcase
+            sectionTitle="Piratas do Caribe"
+            titleQuery="pirates of the caribbean"
+          />
+        </div>
       </main>
     </Fragment>
   );

@@ -1,6 +1,7 @@
+import { Search } from "@/types/main";
 import { OMDbSearchResponse } from "@/types/omdb";
 
-export const mapOMDbSearchResponse = (response: OMDbSearchResponse) => {
+export const mapOMDbSearchResponse = (response: OMDbSearchResponse): Search => {
   return {
     totalResults: response.totalResults,
     data: response.Search.map((result) => ({
