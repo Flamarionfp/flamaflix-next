@@ -4,8 +4,6 @@ import { AvatarProps } from './avatar.types';
 export const Avatar = (props: AvatarProps) => {
   const { src, alt, size = 40 } = props;
 
-  const a = 'b';
-
   return (
     <Image
       className='rounded-full'

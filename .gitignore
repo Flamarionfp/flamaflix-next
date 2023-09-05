@@ -35,4 +35,5 @@ yarn-error.log*
 next-env.d.ts
 
 # cypress
-cypress/videos/**/*.mp4
+/cypress/screenshots
+/cypress/videos
