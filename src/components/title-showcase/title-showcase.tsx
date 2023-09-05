@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { ContentProps } from "./title-showcase.types";
@@ -19,7 +18,7 @@ export const Content = async (props: ContentProps) => {
   if (grid) {
     return (
       <section className={`flex flex-col items-center py-${verticalSpace}`}>
-        <div className=" max-w-[1236px]">
+        <div className="max-w-[1236px]">
           {sectionTitle && <SectionTitle title={sectionTitle} />}
 
           <div className="grid grid-cols-3 gap-4">

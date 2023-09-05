@@ -6,6 +6,7 @@ export const SearchInput = () => {
     <form onSubmit={(e) => e.preventDefault()}>
       <div className="relative">
         <input
+          id="search-input"
           className="rounded-lg p-2 bg-gray-700 min-w-[25rem] outline-none"
           placeholder="Pesquise algo..."
         />
