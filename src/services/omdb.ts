@@ -1,8 +1,9 @@
 import { OMDbSearchResponse } from "@/types/omdb";
+import { filterSearchData } from "@/utils/filters/search";
 import { mapOMDbSearchResponse } from "@/utils/mappers/search";
 import { getQueryParams } from "@/utils/url";
 
-export const searchTitles = async (titleQuery: string) => {
+export const searchTitles = async (titleQuery: string, maxResults?: number) => {
   const params = {
     apikey: process.env.OMDB_API_KEY,
     s: titleQuery,
@@ -23,9 +24,10 @@ export const searchTitles = async (titleQuery: string) => {
 
   const { data: formattedData = [], totalResults } =
     mapOMDbSearchResponse(data);
+  const filteredData = filterSearchData(formattedData, maxResults);
 
   return {
-    data: formattedData.filter((title) => title?.poster !== "N/A"),
+    data: filteredData,
     totalResults,
   };
 };

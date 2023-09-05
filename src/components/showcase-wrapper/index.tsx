@@ -13,13 +13,14 @@ export const ShowcaseWrapper = (props: ShowcaseWrapperProps) => {
     sectionTitle = "",
     slidesPerView = 8.5,
     spaceBetween = 20,
+    verticalSpace = 10,
     children,
   } = props;
 
   const slides = Children.toArray(children);
 
   return (
-    <section className="flex justify-center">
+    <section className={`flex justify-center py-${verticalSpace}`}>
       <div className="max-w-[1236px]">
         {sectionTitle && (
           <h3 className="mb-2 font-bold text-lg">{sectionTitle}</h3>
@@ -36,9 +37,7 @@ export const ShowcaseWrapper = (props: ShowcaseWrapperProps) => {
           }}
         >
           {Children.map(slides, (slide) => (
-            <SwiperSlide style={{ borderRadius: "100% !important" }}>
-              {slide}
-            </SwiperSlide>
+            <SwiperSlide>{slide}</SwiperSlide>
           ))}
         </Swiper>
       </div>

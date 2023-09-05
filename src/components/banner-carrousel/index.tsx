@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Keyboard } from "swiper/modules";
+import { Pagination, Navigation, Keyboard, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,28 +13,33 @@ export const BannerCarrousel = () => {
     .map((_, index) => `/banners/main/banner${index + 1}.jpg`);
 
   return (
-    <Swiper
-      modules={[Pagination, Navigation, Keyboard]}
-      spaceBetween={30}
-      autoplay={true}
-      className="mySwiper"
-      navigation={true}
-      keyboard={true}
-      pagination={{
-        clickable: true,
-      }}
-    >
-      {banners.map((banner) => (
-        <SwiperSlide key={banner}>
-          <Image
-            className="w-full max-h-[85vh]"
-            width={1236}
-            height={300}
-            alt="Banner"
-            src={banner}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <section>
+      <Swiper
+        modules={[Pagination, Navigation, Keyboard, Autoplay]}
+        spaceBetween={30}
+        className="mySwiper"
+        navigation={true}
+        keyboard={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+      >
+        {banners.map((banner) => (
+          <SwiperSlide key={banner}>
+            <Image
+              className="w-full max-h-[85vh]"
+              width={1236}
+              height={300}
+              alt="Banner"
+              src={banner}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 };

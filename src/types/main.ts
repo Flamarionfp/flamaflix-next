@@ -11,8 +11,14 @@ export interface Search {
   data: SearchData[];
 }
 
-export interface ShowcaseProps {
+interface StyleProps {
+  verticalSpace?: number;
+}
+
+export interface ShowcaseProps extends StyleProps {
   sectionTitle?: string;
   slidesPerView?: number;
   spaceBetween?: number;
+  maxResults?: number;
+  grid?: boolean;
 }
