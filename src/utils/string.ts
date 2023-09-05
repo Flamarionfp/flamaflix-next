@@ -3,5 +3,5 @@ export const truncate = (str: string, maxLength: number) => {
     return str;
   }
 
-  return str.slice(0, maxLength) + "...";
+  return str.slice(0, maxLength) + '...';
 };

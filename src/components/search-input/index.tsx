@@ -1,20 +1,20 @@
-"use client";
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
 
 export const SearchInput = () => {
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <div className="relative">
+      <div className='relative'>
         <input
-          id="search-input"
-          className="rounded-lg p-2 bg-gray-700 min-w-[25rem] outline-none"
-          placeholder="Pesquise algo..."
+          id='search-input'
+          className='min-w-[25rem] rounded-lg bg-gray-700 p-2 outline-none'
+          placeholder='Pesquise algo...'
         />
-        <button type="submit">
+        <button type='submit'>
           <Image
-            className="absolute top-2.5 right-6"
-            src="/icons/search-icon.svg"
-            alt="ícone de busca"
+            className='absolute right-6 top-2.5'
+            src='/icons/search-icon.svg'
+            alt='ícone de busca'
             width={20}
             height={20}
           />

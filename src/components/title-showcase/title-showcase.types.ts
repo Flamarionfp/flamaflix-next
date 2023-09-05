@@ -1,4 +1,4 @@
-import { SearchData, ShowcaseProps } from "@/types/main";
+import { SearchData, ShowcaseProps } from '@/types/main';
 
 export interface TitleShowcaseProps extends ShowcaseProps {
   titleQuery: string;

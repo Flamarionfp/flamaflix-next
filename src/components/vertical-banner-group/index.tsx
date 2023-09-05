@@ -1,5 +1,5 @@
-import { BannerStandard } from "..";
-import { VerticalBannerGroupProps } from "./vertical-banner-group.types";
+import { BannerStandard } from '..';
+import { VerticalBannerGroupProps } from './vertical-banner-group.types';
 
 export const VerticalBannerGroup = (props: VerticalBannerGroupProps) => {
   const { banners, space = 4 } = props;
@@ -7,7 +7,7 @@ export const VerticalBannerGroup = (props: VerticalBannerGroupProps) => {
   return (
     <section className={`flex flex-col items-center gap-${space}`}>
       {banners.map((banner) => (
-        <div key={banner.src} className="flex justify-center">
+        <div key={banner.src} className='flex justify-center'>
           <BannerStandard {...banner} />
         </div>
       ))}

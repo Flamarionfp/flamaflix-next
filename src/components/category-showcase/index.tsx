@@ -1,7 +1,7 @@
-"use client";
-import Image from "next/image";
-import { ShowcaseWrapper } from "../showcase-wrapper";
-import { CategoryShowcaseProps } from "./category-showcase.types";
+'use client';
+import Image from 'next/image';
+import { ShowcaseWrapper } from '../showcase-wrapper';
+import { CategoryShowcaseProps } from './category-showcase.types';
 
 export const CategoryShowcase = (props: CategoryShowcaseProps) => {
   const { folder, slidesPerView = 6.5 } = props;
@@ -15,7 +15,7 @@ export const CategoryShowcase = (props: CategoryShowcaseProps) => {
       {categories.map((image) => (
         <Image
           key={image}
-          alt="Imagem da categoria"
+          alt='Imagem da categoria'
           src={image}
           height={170}
           width={170}

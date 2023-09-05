@@ -1,6 +1,6 @@
 export interface OMDbSearchResponse {
   totalResults: number;
-  Response: "True" | "False";
+  Response: 'True' | 'False';
   Search: {
     Title: string;
     Year: string;
