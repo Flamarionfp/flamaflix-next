@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Test Case renders avatar unchanged 1`] = `
+<div>
+  <img
+    alt="avatar"
+    class="rounded-full"
+    data-nimg="1"
+    decoding="async"
+    height="40"
+    loading="lazy"
+    src="/_next/image?url=%2Fpath&w=96&q=75"
+    srcset="/_next/image?url=%2Fpath&w=48&q=75 1x, /_next/image?url=%2Fpath&w=96&q=75 2x"
+    style="color: transparent;"
+    width="40"
+  />
+</div>
+`;
